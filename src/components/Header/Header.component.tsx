@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import * as Styled from "./Header.styled";
-import logo from "./../../images/logo.png";
+import { logo } from "../../images";
 import {
   FavoriteButton,
   SignInButton,

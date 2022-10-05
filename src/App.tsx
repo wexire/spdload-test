@@ -6,23 +6,23 @@ import {
   Routes,
 } from "react-router-dom";
 
-import { AppContainer } from "./App.styled";
 import Header from "./components/Header/Header.component";
+import HomePage from "./pages/HomePage/HomePage.component";
 
 type Props = {};
 
 const App = (props: Props) => {
   return (
-    <AppContainer>
+    <div>
       <Router>
         <Header />
         <Routes>
-          <Route path="/home" />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/favorite" />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
       </Router>
-    </AppContainer>
+    </div>
   );
 };
 

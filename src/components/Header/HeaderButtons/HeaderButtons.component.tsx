@@ -1,5 +1,5 @@
 import React from "react";
-import heart from "../../../images/heart.svg";
+import { heart } from "../../../images";
 import * as Styled from "./HeaderButtons.styled";
 
 const SignInButton = () => {
