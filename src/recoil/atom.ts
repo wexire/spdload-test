@@ -6,6 +6,11 @@ export const toursState = atom({
   default: [] as ITour[],
 });
 
+export const favoriteToursState = atom({
+  key: "favoriteTours",
+  default: [] as ITour[],
+});
+
 export const pageState = atom({
   key: "page",
   default: 0,

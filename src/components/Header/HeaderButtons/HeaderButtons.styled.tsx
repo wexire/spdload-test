@@ -24,4 +24,8 @@ export const FavoriteButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+
+  &.isActive {
+    background-color: #dd377d;
+  }
 `;

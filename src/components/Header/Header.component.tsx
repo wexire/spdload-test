@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import * as Styled from "./Header.styled";
 import { logo } from "../../images";
 import {
@@ -12,6 +12,7 @@ type Props = {};
 
 const Header = (props: Props) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <Styled.Header>
@@ -22,7 +23,10 @@ const Header = (props: Props) => {
         <HeaderMenu />
       </Styled.FlexItem>
       <Styled.FlexItem property="flex-end">
-        <FavoriteButton onClick={() => navigate("/favorites")} />
+        <FavoriteButton
+          onClick={() => navigate("/favorites")}
+          isActive={location.pathname === "/favorites"}
+        />
         <SignInButton />
       </Styled.FlexItem>
     </Styled.Header>
