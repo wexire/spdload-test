@@ -22,7 +22,7 @@ const Header = (props: Props) => {
         <HeaderMenu />
       </Styled.FlexItem>
       <Styled.FlexItem property="flex-end">
-        <FavoriteButton />
+        <FavoriteButton onClick={() => navigate("/favorites")} />
         <SignInButton />
       </Styled.FlexItem>
     </Styled.Header>

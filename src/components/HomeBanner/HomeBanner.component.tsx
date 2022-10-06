@@ -2,7 +2,7 @@ import React from "react";
 import * as Styled from "./HomeBanner.styled";
 import { arrowDown, image1, image2, image3 } from "../../images";
 
-const HomeBanner = () => {
+const HomeBanner = ({ scrollFunc }: IHomeBanner) => {
   const imagesArray = [image1, image2, image3];
 
   return (
@@ -14,12 +14,16 @@ const HomeBanner = () => {
         </Styled.SubText>
         <Styled.SubText>YOU</Styled.SubText>
       </Styled.MainText>
-      <Styled.ScrollText>
+      <Styled.ScrollText onClick={scrollFunc}>
         Explore Tours
         <img src={arrowDown} alt="arrowDown" />
       </Styled.ScrollText>
     </div>
   );
 };
+
+interface IHomeBanner {
+  scrollFunc: () => void;
+}
 
 export default HomeBanner;

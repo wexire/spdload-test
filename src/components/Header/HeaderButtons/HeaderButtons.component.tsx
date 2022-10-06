@@ -6,9 +6,9 @@ const SignInButton = () => {
   return <Styled.SignInButton>SIGN IN</Styled.SignInButton>;
 };
 
-const FavoriteButton = () => {
+const FavoriteButton = ({ onClick }: { onClick: () => void }) => {
   return (
-    <Styled.FavoriteButton>
+    <Styled.FavoriteButton onClick={onClick}>
       <img src={heart} alt="heart" />
     </Styled.FavoriteButton>
   );
