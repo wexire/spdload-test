@@ -16,6 +16,7 @@ import { onError } from "@apollo/client/link/error";
 
 import Header from "./components/Header/Header.component";
 import HomePage from "./pages/HomePage/HomePage.component";
+import FavoritesPage from "./pages/FavoritesPage/FavoritesPage.component";
 
 type Props = {};
 
@@ -42,7 +43,7 @@ const App = (props: Props) => {
         <Header />
         <Routes>
           <Route path="/home" element={<HomePage />} />
-          <Route path="/favorites" />
+          <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
       </Router>

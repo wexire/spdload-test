@@ -12,7 +12,7 @@ const ToursList = () => {
   const page = useRecoilValue(pageState);
   const [currentTours, setCurrentTours] = useState<ITour[]>([]);
 
-  const countTours = () => {
+  const calculateTours = () => {
     setCurrentTours(
       page <= -1
         ? tours
@@ -32,7 +32,7 @@ const ToursList = () => {
   }, [tours]);
 
   useEffect(() => {
-    countTours();
+    calculateTours();
   }, [page]);
 
   return (

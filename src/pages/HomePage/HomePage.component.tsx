@@ -3,7 +3,6 @@ import { useRecoilState } from "recoil";
 import { useQuery } from "@apollo/client";
 import HomeBanner from "../../components/HomeBanner/HomeBanner.component";
 import ToursSection from "../../components/ToursSection/ToursSection.component";
-import * as Styled from "./HomePage.styled";
 import { TOURS_QUERY } from "../../graphql/queries";
 import { toursState } from "../../recoil/atom";
 import { IToursRequest } from "../../types/types";
@@ -28,12 +27,12 @@ const HomePage = () => {
   }, [loading]);
 
   return (
-    <Styled.Container>
+    <div>
       <HomeBanner scrollFunc={scrollToList} />
       <ToursSection
         toursListRef={toursListRef as LegacyRef<HTMLDivElement> | undefined}
       />
-    </Styled.Container>
+    </div>
   );
 };
 

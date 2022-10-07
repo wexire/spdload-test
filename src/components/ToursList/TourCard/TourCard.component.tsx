@@ -24,10 +24,12 @@ const TourCard = ({ tour }: { tour: ITour }) => {
     <Styled.Card>
       <Styled.CardImg src={tour.flight.links.flickr_images[0]} alt="flight" />
       <Styled.CardContent>
-        <Styled.CardText property="isTitle">
-          {tour.title.toUpperCase()}
-        </Styled.CardText>
-        <Styled.CardText>{tour.flight.mission_name}</Styled.CardText>
+        <div>
+          <Styled.CardText property="isTitle">
+            {tour.title.toUpperCase()}
+          </Styled.CardText>
+          <Styled.CardText>{tour.flight.mission_name}</Styled.CardText>
+        </div>
         <Styled.ButtonsBlock>
           <BuyButton />
           <FavoriteButton
