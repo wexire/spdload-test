@@ -9,6 +9,7 @@ const FavoriteTours = () => {
   const [favoriteTours, setFavoriteTours] = useRecoilState(favoriteToursState);
   const emptySpaces = 3;
   const emptyTourCards = emptySpaces - favoriteTours.length;
+  const emptyIdxArr = Array.from(Array(emptyTourCards).keys());
 
   return (
     <Styled.Container>
@@ -21,7 +22,8 @@ const FavoriteTours = () => {
         {favoriteTours.map((tour) => (
           <TourCard tour={tour} key={tour.id} />
         ))}
-        {emptyTourCards > 0 && Array(emptyTourCards).fill(<Styled.EmptyCard />)}
+        {emptyTourCards > 0 &&
+          emptyIdxArr.map((idx) => <Styled.EmptyCard key={idx} />)}
       </ToursListContainer>
     </Styled.Container>
   );

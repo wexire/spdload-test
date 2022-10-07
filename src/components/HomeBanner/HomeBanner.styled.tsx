@@ -15,6 +15,12 @@ export const MainText = styled.div`
   flex-direction: column;
 `;
 
+export const Pagination = styled.div`
+  position: absolute;
+  top: 42%;
+  left: 45%;
+`;
+
 export const SubText = styled.div`
   font-size: ${(props) => (props.property === "upper" ? "3em" : "19.5em")};
   font-family: "Syne", monospace;

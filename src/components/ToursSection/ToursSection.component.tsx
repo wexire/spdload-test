@@ -1,7 +1,7 @@
 import React, { LegacyRef } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { TOURS_PER_PAGE } from "../../consts";
 import { pageState, totalPagesState } from "../../recoil/atom";
+import Pagination from "../Pagination/Pagination.component";
 import ToursList from "../ToursList/ToursList.component";
 import ArrowButton from "./SectionButtons/SectionButtons.component";
 import * as Styled from "./ToursSection.styled";
@@ -18,20 +18,15 @@ const ToursSection = ({ toursListRef }: IToursSection) => {
           <div>
             <ArrowButton
               isLeft={true}
-              onClick={() =>
-                setPage(
-                  page === 1 - TOURS_PER_PAGE
-                    ? totalPages - TOURS_PER_PAGE
-                    : page - 1
-                )
-              }
+              onClick={() => setPage(page === 0 ? totalPages - 1 : page - 1)}
             />
             <ArrowButton
-              onClick={() => setPage(page === totalPages ? 0 : page + 1)}
+              onClick={() => setPage(page === totalPages - 1 ? 0 : page + 1)}
             />
           </div>
         </Styled.Head>
         <ToursList />
+        <Pagination totalPages={totalPages} page={page} color="#1e1e1e" />
       </Styled.Container>
     </div>
   );

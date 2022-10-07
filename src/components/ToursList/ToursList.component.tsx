@@ -14,11 +14,7 @@ const ToursList = () => {
 
   const calculateTours = () => {
     setCurrentTours(
-      page <= -1
-        ? tours
-            .slice(totalPages + page, totalPages)
-            .concat(tours.slice(0, page + TOURS_PER_PAGE))
-        : page >= totalPages - TOURS_PER_PAGE
+      page >= totalPages - TOURS_PER_PAGE
         ? tours
             .slice(page, totalPages)
             .concat(tours.slice(0, page - totalPages + TOURS_PER_PAGE))
